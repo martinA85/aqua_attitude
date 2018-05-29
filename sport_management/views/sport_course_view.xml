@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <!-- sport.activity form view -->
+        <record id="sport_activity_view_form" model="ir.ui.view">
+            <field name="name">sport.activity.view.form</field>
+            <field name="model">sport.activity</field>
+            <field name="arch" type="xml">
+                <form string="activity">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <label for="len_hours" string="Durée : " />
+                            <div class="hour_picker">
+                                <field name="len_hours" style="width: 25%" placeholder="HH" />
+                                <field name="len_mins" style="width: 25%" placeholder="MM" />
+                            </div>
+                            <field name="length" />
+                            <field name="max_attendee" />
+                            <field name="min_attendee" />
+                            <field name="course_type_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

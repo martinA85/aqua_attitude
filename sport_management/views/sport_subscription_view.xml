@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="sport_badge_view_search" model="ir.ui.view">
+            <field name="name">sport.badge.view.search</field>
+            <field name="model">sport.subscription</field>
+            <field name="arch" type="xml">
+                <search string="Search Badges">
+                    <field name="client_id" operator="="/>
+                    <field name="session_id" operator="="/>
+                    <field name="state" operator="="/>
+                </search>
+            </field>
+        </record>
+
+        <record id="sport_subscription_view_form" model="ir.ui.view">
+            <field name="name">sport.subscription.view.form</field>
+            <field name="model">sport.subscription</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <header>
+                            <button string="Subscribe" type="object" name="subscribe" states="waiting,canceled"/>
+                            <button string="Valid subscription" type="object" name="valid" states="sub"/>
+                            <button string="Cancel subscription" type="object" name="cancel" states="sub,waiting"/>
+                        </header>
+                        <group>
+                            <field name="client_id"/>
+                            <field name="session_id"/>
+                            <field name="sub_date"/>
+                            <field name="state"/>
+                            <field name="badge_id" readonly="1"/>
+                            <field name="scan_date" readonly="1"/>
+                            <field name="unit_price" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
